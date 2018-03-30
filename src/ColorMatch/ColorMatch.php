@@ -336,7 +336,9 @@ class ColorMatch extends PluginBase implements Listener{
                         return false;
                     }
                     $sender->sendMessage($this->getPrefix().$this->getMsg('help'));
+                    return true;
             }
+        return true;
     }
     
     public function arenaExist($name){
