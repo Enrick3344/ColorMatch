@@ -123,7 +123,7 @@ class ColorMatch extends PluginBase implements Listener{
         return true;
     }
     
-    public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
+    public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args): bool{
             if(strtolower($cmd->getName()) == "cm"){
                     if(isset($args[0])){
                         if($sender instanceof Player){
@@ -330,10 +330,10 @@ class ColorMatch extends PluginBase implements Listener{
                             default:
                                 $sender->sendMessage($this->getPrefix().$this->getMsg('help'));
                         }
-                        return;
+                        return true;
                         }
                         $sender->sendMessage('run command only in-game');
-                        return;
+                        return false;
                     }
                     $sender->sendMessage($this->getPrefix().$this->getMsg('help'));
             }
