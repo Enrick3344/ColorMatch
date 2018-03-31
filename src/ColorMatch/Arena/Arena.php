@@ -433,13 +433,13 @@ class Arena implements Listener{
         }
         $this->currentColor = $event->getNewColor();
         foreach($this->ingamep as $p){
-            $p->getInventory()->setItem($player->getInventory()->getHotbarSlotIndex(0), Item::get($this->getBlock(), $color, 1));
-            $p->getInventory()->setItem($player->getInventory()->getHotbarSlotIndex(1), Item::get($this->getBlock(), $color, 1));
-            $p->getInventory()->setItem($player->getInventory()->getHotbarSlotIndex(2), Item::get($this->getBlock(), $color, 1));
-            $p->getInventory()->setItem($player->getInventory()->getHotbarSlotIndex(3), Item::get($this->getBlock(), $color, 1));
-            $p->getInventory()->setItem($player->getInventory()->getHotbarSlotIndex(4), Item::get($this->getBlock(), $color, 1));
-            $p->getInventory()->setItem($player->getInventory()->getHotbarSlotIndex(5), Item::get($this->getBlock(), $color, 1));
-            $p->getInventory()->setItem($player->getInventory()->getHotbarSlotIndex(6), Item::get($this->getBlock(), $color, 1));
+            $p->getInventory()->setItem($p->getInventory()->getHotbarSlotIndex(0), Item::get($this->getBlock(), $color, 1));
+            $p->getInventory()->setItem($p->getInventory()->getHotbarSlotIndex(1), Item::get($this->getBlock(), $color, 1));
+            $p->getInventory()->setItem($p->getInventory()->getHotbarSlotIndex(2), Item::get($this->getBlock(), $color, 1));
+            $p->getInventory()->setItem($p->getInventory()->getHotbarSlotIndex(3), Item::get($this->getBlock(), $color, 1));
+            $p->getInventory()->setItem($p->getInventory()->getHotbarSlotIndex(4), Item::get($this->getBlock(), $color, 1));
+            $p->getInventory()->setItem($p->getInventory()->getHotbarSlotIndex(5), Item::get($this->getBlock(), $color, 1));
+            $p->getInventory()->setItem($p->getInventory()->getHotbarSlotIndex(6), Item::get($this->getBlock(), $color, 1));
             $p->getInventory()->sendContents($p);
         }
     }
