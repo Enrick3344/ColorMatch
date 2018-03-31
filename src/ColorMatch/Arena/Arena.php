@@ -433,21 +433,13 @@ class Arena implements Listener{
         }
         $this->currentColor = $event->getNewColor();
         foreach($this->ingamep as $p){
-            $p->getInventory()->setItem(0, Item::get($this->getBlock(), $color, 1));
-            $p->getInventory()->setItem(1, Item::get($this->getBlock(), $color, 1));
-            $p->getInventory()->setItem(2, Item::get($this->getBlock(), $color, 1));
-            $p->getInventory()->setItem(3, Item::get($this->getBlock(), $color, 1));
-            $p->getInventory()->setItem(4, Item::get($this->getBlock(), $color, 1));
-            $p->getInventory()->setItem(5, Item::get($this->getBlock(), $color, 1));
-            $p->getInventory()->setItem(6, Item::get($this->getBlock(), $color, 1));
-            $p->getInventory()->setHotbarSlotIndex(0, 0);
-            $p->getInventory()->setHotbarSlotIndex(1, 1);
-            $p->getInventory()->setHotbarSlotIndex(2, 2);
-            $p->getInventory()->setHotbarSlotIndex(3, 3);
-            $p->getInventory()->setHotbarSlotIndex(4, 4);
-            $p->getInventory()->setHotbarSlotIndex(5, 5);
-            $p->getInventory()->setHotbarSlotIndex(6, 6);
-            $p->getInventory()->setHotbarSlotIndex(7, 7);
+            $p->getInventory()->setItem($player->getInventory()->getHotbarSlotIndex(0), Item::get($this->getBlock(), $color, 1));
+            $p->getInventory()->setItem($player->getInventory()->getHotbarSlotIndex(1), Item::get($this->getBlock(), $color, 1));
+            $p->getInventory()->setItem($player->getInventory()->getHotbarSlotIndex(2), Item::get($this->getBlock(), $color, 1));
+            $p->getInventory()->setItem($player->getInventory()->getHotbarSlotIndex(3), Item::get($this->getBlock(), $color, 1));
+            $p->getInventory()->setItem($player->getInventory()->getHotbarSlotIndex(4), Item::get($this->getBlock(), $color, 1));
+            $p->getInventory()->setItem($player->getInventory()->getHotbarSlotIndex(5), Item::get($this->getBlock(), $color, 1));
+            $p->getInventory()->setItem($player->getInventory()->getHotbarSlotIndex(6), Item::get($this->getBlock(), $color, 1));
             $p->getInventory()->sendContents($p);
         }
     }
